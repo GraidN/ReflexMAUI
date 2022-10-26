@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ReflexMAUI.MainPage">
+
+    <Grid x:Name="MainGrid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+
+        </Grid.RowDefinitions>
+
+        <Label
+                Text="Score: "
+                x:Name="ScoreLabel"
+                SemanticProperties.HeadingLevel="Level1"
+                Margin="0,10,0,0"
+                FontSize="18"
+                />
+        <Label
+                Grid.Column="1"
+                Text="Set time:"
+                x:Name="TimerLabel"
+                SemanticProperties.HeadingLevel="Level1"
+                Margin="0,10,0,0"
+                FontSize="18"
+                IsVisible="true"
+                />
+        <Editor
+            x:Name="TimerEditor"
+            Text=""
+            Grid.Column="1"
+            Grid.Row="0"
+            WidthRequest="50"
+            HeightRequest="50"
+            VerticalOptions="Start"
+            HorizontalOptions="Start"
+            Margin="80,0,0,0"
+            Keyboard="Numeric"
+            FontSize="18"
+            />
+        <Button Grid.Row="1" Grid.Column="1"
+                x:Name="StartButton"
+                Text="Start!"
+                Margin="0,180,0,0"
+                WidthRequest="65"
+                HeightRequest="35"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                Clicked="StartButtonClicked"
+                />
+        <Button Grid.Row="1" Grid.Column="0" 
+                Grid.RowSpan="2"
+                Grid.ColumnSpan="3"
+                    x:Name="TargetButton"
+                    WidthRequest="65"
+                    HeightRequest="35"
+                    HorizontalOptions="Start" 
+                    VerticalOptions="Start"
+                    Text="Here!"
+                    Clicked="OnCounterClicked"
+                IsVisible="false"
+                />
+    </Grid>
+
+</ContentPage>
